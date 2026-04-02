@@ -1,0 +1,49 @@
+menu "Application WiFi and Networking Settings"
+    menu "WiFi SSID and Password Settings"
+        config WIFI_SSID
+            string "WiFi SSID"
+            default "ssid"
+            help
+                Enter the SSID (network name) of the WiFi network you want to connect to.
+                This is the name that appears when scanning for available WiFi networks.
+                Maximum length is typically 32 characters.
+
+        config WIFI_PASSWORD
+            string "WiFi Password"
+            default "password"
+            help
+                Enter the password for the WiFi network specified in WIFI_SSID.
+                Leave empty for open (unsecured) networks.
+                For WPA/WPA2 networks, this should be at least 8 characters long.
+                The password is case-sensitive.
+
+        config WIFI_RETRY_CONNECTION_ATTEMPTS
+            int "Number of WiFi connection retries"
+            range 1 10
+            default 3
+            help
+                Set the number of times the device will attempt to reconnect to WiFi
+                if the initial connection fails or if the connection is lost.
+                
+                Each retry attempt includes a full connection cycle (association,
+                authentication, and IP address acquisition).
+
+                Setting this too high may cause long delays during startup if
+                the WiFi network is unavailable.
+    endmenu
+
+    menu "NTP Server Settings"
+        config NTP_SERVER
+            string "NTP Server"
+            default "3.pool.ntp.org"
+            help
+                Specify the NTP (Network Time Protocol) server to use for time synchronization.
+                This server will be used to get the current date and time once WiFi is connected.
+                
+                Common NTP servers:
+                - pool.ntp.org (global pool)
+                - 0.pool.ntp.org, 1.pool.ntp.org, 2.pool.ntp.org, 3.pool.ntp.org
+                - time.google.com (Google's NTP server)
+                - time.cloudflare.com (Cloudflare's NTP server)
+    endmenu
+endmenu

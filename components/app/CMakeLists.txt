@@ -1,0 +1,9 @@
+idf_component_register(
+    SRCS
+        src/app.c
+        src/colors.c
+    INCLUDE_DIRS
+        include/
+    REQUIRES 
+        lvgl_port 
+)

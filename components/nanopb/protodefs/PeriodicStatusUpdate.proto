@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package koje_booker_hub.protobufs;
+option go_package = "koje-booker-hub/src/protobufs";
+
+import "ReservationStatus.proto";
+
+message PeriodicStatusUpdate {
+    uint64 time = 1;
+    int64 timeZoneOffset = 2;
+    ReservationStatus status = 3;
+}
