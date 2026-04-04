@@ -1,12 +1,15 @@
-#include "display/lv_display.h"
 #include <app.h>
-#include <colors.h>
+#include <app_ui.h>
+
+#include <styles/text.h>
+#include <styles/colors.h>
 
 void app_create() {
-    initialize_color_styles();
-    app_create_background(lv_screen_active());
+    app_initialize_ui();
+    app_ui_create_ui_elements();
 }
 
-void app_create_background(lv_obj_t* container) {
-    lv_obj_set_style_bg_color(container, background_grey, 0);
+void app_initialize_ui() {
+    initialize_text_styles();
+    initialize_color_styles();
 }

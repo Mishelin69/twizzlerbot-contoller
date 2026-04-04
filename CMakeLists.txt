@@ -5,4 +5,4 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 add_compile_options("-Wno-attributes")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-project(koje_booker.cmake)
+project(twizzler-controller.cmake)

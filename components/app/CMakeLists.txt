@@ -1,9 +1,9 @@
 idf_component_register(
     SRCS
         src/app.c
-        src/colors.c
+        src/app_ui.c
     INCLUDE_DIRS
         include/
     REQUIRES 
-        lvgl_port 
+        ui
 )
