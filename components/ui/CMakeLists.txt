@@ -14,6 +14,7 @@ idf_component_register(
         src/styles/styles.c
 
         src/input/button.c
+        src/input/joystick.c
 
         src/page_manager.c
         src/page_vehicle.c
