@@ -1,7 +1,9 @@
-#include "page_manager.h"
 #include <app_ui.h>
+#include <app_joystick_id_defs.h>
 
 #include <lvgl.h>
+
+#include <page_manager.h>
 
 #include <styles/styles.h>
 #include <styles/images.h>
@@ -30,5 +32,5 @@ lv_obj_t* app_ui_create_background_alien(lv_obj_t* container) {
 void app_ui_create_ui_elements() {
     MASTER_CONTAINER = app_ui_create_background(lv_screen_active());
     app_ui_create_background_alien(MASTER_CONTAINER);
-    page_manager_create(MASTER_CONTAINER);
+    page_manager_create(MASTER_CONTAINER, APP_JOYSTICK_VEHICLE_ID, APP_JOYSTICK_SENSOR_ID);
 }
