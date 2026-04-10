@@ -14,9 +14,9 @@
     #define checkreturn
 #endif
 
-#include "../../include/nanopb/pb.h"
-#include "../../include/nanopb/pb_decode.h"
-#include "../../include/nanopb/pb_common.h"
+#include <nanopb/pb.h>
+#include <nanopb/pb_decode.h>
+#include <nanopb/pb_common.h>
 
 /**************************************
  * Declarations internal to this file *

@@ -482,7 +482,10 @@ static esp_err_t tick_init(void)
     // Tick interface for LVGL (using esp_timer to generate 2ms periodic event)
     const esp_timer_create_args_t lvgl_tick_timer_args = {
         .callback = &tick_increment, // Set the callback function for the timer
-        .name = "LVGL tick" // Name of the timer
+        .arg = NULL,
+        .dispatch_method = ESP_TIMER_TASK,
+        .name = "LVGL tick", // Name of the timer
+        .skip_unhandled_events = false
     };
     esp_timer_handle_t lvgl_tick_timer = NULL; // Timer handle
     ESP_ERROR_CHECK(esp_timer_create(&lvgl_tick_timer_args, &lvgl_tick_timer)); // Create the timer

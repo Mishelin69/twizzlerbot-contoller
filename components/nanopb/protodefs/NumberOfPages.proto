@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package koje_booker_hub.protobufs;
-option go_package = "koje-booker-hub/src/protobufs";
-
-message NumberOfPages {
-    uint64 id = 1;
-    uint32 pages = 2;
-}

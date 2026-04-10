@@ -3,6 +3,8 @@
 
 #include <connect_to_wifi.h>
 
+#include <app_esp_now.h>
+
 #include <waveshare_rgb_lcd_port.h>
 
 void ram_monitor_task(void* params) {
@@ -19,6 +21,8 @@ void ram_monitor_task(void* params) {
 void app_main() {
     waveshare_esp32_s3_rgb_lcd_init();
     app_nvs_init();
+    ESP_ERROR_CHECK(wifi_init());
+    ESP_ERROR_CHECK(app_espnow_init());
 
     ESP_LOGI(TAG, "Starting App");
 
@@ -28,8 +32,6 @@ void app_main() {
         // Release the mutex
         lvgl_port_unlock();
     } 
-
-    ESP_ERROR_CHECK(wifi_init());
 
     xTaskCreatePinnedToCore(
         ram_monitor_task, 

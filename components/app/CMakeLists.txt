@@ -4,6 +4,7 @@ idf_component_register(
         src/app_ui.c
     INCLUDE_DIRS
         include/
-    REQUIRES 
+    PRIV_REQUIRES 
         ui
+        app_data_transfer
 )

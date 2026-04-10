@@ -1,0 +1,9 @@
+menu "My Application Settings"
+
+    config APP_QUEUE_TASK_CORE
+        int "Core to pin the queue task to"
+        default 0
+        help
+            Select which CPU core (0 or 1) the queue task should run on.
+
+endmenu

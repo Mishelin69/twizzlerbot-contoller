@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Request {
+  uint64 id = 1;
+  CommandType command = 2;
+  float x_movement = 3;
+  float y_movement = 4;
+}
+
+enum CommandType {
+    UNKOWN_COMMAND = 0;
+    VEHICLE = 1;
+    SENSOR = 2;
+}

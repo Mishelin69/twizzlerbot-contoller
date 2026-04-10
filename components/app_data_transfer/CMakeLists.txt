@@ -1,0 +1,11 @@
+idf_component_register(
+    SRCS
+        src/app_data_transfer.c
+        src/app_queue_send_data.c
+        src/encode_and_send_data.c
+    INCLUDE_DIRS
+        include/
+    REQUIRES 
+        espnow
+        nanopb
+)

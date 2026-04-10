@@ -5,4 +5,6 @@ idf_component_register(
         wifi
         app_storage
         app
+        espnow
+        lvgl_port
 )
